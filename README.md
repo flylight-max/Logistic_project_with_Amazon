@@ -5,4 +5,4 @@ The Amazon Delivery Dataset is provided as a single CSV file named "amazon_deliv
 The file size is approximately 6 MB, making it suitable for analysis using various tools and programming languages. The data is organized in a tabular format, with each row representing a delivery and each column representing a specific attribute or feature.
 The CSV file uses commas as the delimiter and includes a header row that lists the column names. The file is encoded in UTF-8 format, ensuring compatibility with most text editors and programming environments.  
 
-I will do an EDA on it and look for insights that would affect the Delivery_time (in minutes).
+I will do an EDA and look for insights which could affect the Delivery_time (in minutes).
