@@ -16,3 +16,5 @@ class Location :
         address = self.address()
         country = address.get("country","")
         return country
+
+
