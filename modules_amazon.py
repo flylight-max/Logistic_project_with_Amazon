@@ -5,9 +5,18 @@ class Location :
         self.Longitude = Longitude
     def address(self):
         geolocator = Nominatim(user_agent="my_loc_app")
-        location = geolocator.reverse(f"{self.Latitude},{self.Longitude}")
-        ad = location.raw["address"]
-        return ad
+        try:
+            location = geolocator.reverse(f"{self.Latitude},{self.Longitude}")
+            if location and "address" in location.raw:
+                return location.raw["address"]
+            else:
+                return {}
+        except GeocoderTimeOut:
+            print(f"Geocoding timed out for {self.Latitude},{self.Longitude}")
+            return {}
+        except Exception as e:
+            print(f"Error for coordinates {self.Latitude},{self.Longitude}: {e}")
+            return {}
     def city(self):
         address = self.address()
         city = address.get("city","")
